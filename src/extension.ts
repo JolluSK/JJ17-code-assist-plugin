@@ -6,14 +6,31 @@ export function activate(context: vscode.ExtensionContext) {
 		const editor = vscode.window.activeTextEditor;
 
 		if (!editor) {
-			vscode.window.showErrorMessage('Please open a text editor to use Mr.JJ17(GPT-4).');
+			vscode.window.showErrorMessage('Please open a text editor to use Mr.jj17(GPT-4).');
 			return;
 		}
 
-		const prompt = await vscode.window.showInputBox({ prompt: 'Enter your query for Mr.JJ17(GPT-4):' });
-		if (!prompt) {
+		// const prompt = await vscode.window.showInputBox({ prompt: 'Enter your query for Mr.jj17(GPT-4):' });
+		// if (!prompt) {
+		// 	return;
+		// }
+
+		// Get text from active editor
+		const text = editor.document.getText();
+
+		// Parse text to find comment with query
+		const queryRegex = /\/\/\s*query:\s*(.*)/g;
+
+		let queryMatch = queryRegex.exec(text);
+		
+		console.log(text,queryMatch);
+		
+		if (!queryMatch) {
+			vscode.window.showErrorMessage('No query found in comments.');
 			return;
 		}
+
+		const prompt = queryMatch[1];
 
 		try {
 

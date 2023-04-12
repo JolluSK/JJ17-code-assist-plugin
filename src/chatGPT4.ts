@@ -2,11 +2,10 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { Configuration, OpenAIApi } from "openai";
 
-const config = JSON.parse(readFileSync(join(__dirname, '..', 'config.json'), 'utf-8'));
+const config = JSON.parse(readFileSync(join(__dirname, 'config.json'), 'utf-8'));
 
 const configuration = new Configuration({
-    organization: config.organization,
-    apiKey: config.openAI_apiKey,
+    apiKey: '123abc456def789ghi',
 });
 
 const openai = new OpenAIApi(configuration);

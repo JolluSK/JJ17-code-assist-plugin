@@ -1,11 +1,16 @@
 {
-  "name": "jj17-code-assist-plugin",
-  "displayName": "JJ17-code-assist-plugin",
-  "description": "JJ17 Assist is a VS Code plugin integration that utilizes OpenAI's GPT-4 language model to provide AI-powered code assistance, suggestions, and insights.",
+  "name": "j17-code-assist-helper",
+  "displayName": "j17-code-assist-helper",
+  "description": "jj17 Assist is a VS Code plugin integration that utilizes OpenAI's GPT-4 language model to provide AI-powered code assistance, suggestions, and insights.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.76.0"
   },
+  "files": [
+    "out",
+    "node_modules",
+    "config.json"
+  ],
   "categories": [
     "Other"
   ],
@@ -14,7 +19,7 @@
   "contributes": {
     "commands": [{
       "command": "chatGPT4.query",
-      "title": "JJ17-code-assist-plugin"
+      "title": "j17-code-assist-helper"
     }]
   },
   "scripts": {
