@@ -1,0 +1,6 @@
+{
+    "openAI_apiKey": "your_api_key",
+    "chatGPT4_endpoint": "https://api.openai.com/v4/your_chatgpt4_endpoint",
+    "defaultModel": "some_other_model",
+    "organization": "org-JxaL72m8BwEfEv3IlkLP6Fr0"
+}
